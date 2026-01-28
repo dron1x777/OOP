@@ -11,5 +11,6 @@ public class Main {
         programmer.age = sc.nextInt();
         System.out.println(programmer.name + " " +  programmer.surname + " " + programmer.age);
         System.out.println(programmer.getDateOfBirth());
+
     }
 }

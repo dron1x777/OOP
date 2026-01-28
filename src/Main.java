@@ -9,7 +9,7 @@ public class Main {
         triangle.a =  sc.nextInt();
         triangle.b = sc.nextInt();
         triangle.c = sc.nextInt();
-        System.out.println(triangle.Triangle());
+        System.out.println(triangle.area());
 
     }
 }

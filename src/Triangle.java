@@ -7,5 +7,6 @@ public class Triangle {
         double S = Math.sqrt(p * (p - a) * (p - b) * (p - c));
         return S;
     }
+    
 
 }

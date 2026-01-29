@@ -5,10 +5,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
-        Customer customer = new Customer("Shamidin", "Iphone");
-        Order order = new Order(37000);
+        String[] students = {"Aimerei", "Aibek", "Ruslan", "Akbermet"};
+        Group group = new Group("Galactic Strangers", students);
+        group.printStudents();
+        System.out.println(group.addStudent("Shamidin"));
+        group.printStudents();
+        System.out.println(group.countStudents());
 
-        System.out.println(order.printOrderInfo(customer.name,  customer.phone));
 
     }
 }

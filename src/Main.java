@@ -5,17 +5,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
-        BankAccount user1 = new BankAccount("Shamidin", 2500);
-        System.out.println(user1.toString());
-        System.out.println(user1.deposit(1000));
-        System.out.println(user1.withdraw(-500));
-        System.out.println(user1.printBalance());
+        int[] grades = {4,5,2,5,5,4,3,4,2,5};
+        int[] grades1 = {5,5,5,2,4,5,5,3,4,5,3,2,5};
+        Student user1 = new Student("Shamidin", grades);
+        System.out.println(user1.calculateAverage());
 
 
-        BankAccount user2 = new BankAccount("dog", 1500);
-        System.out.println(user2.toString());
-        System.out.println(user2.deposit(500));
-        System.out.println(user2.withdraw(1000));
-        System.out.println(user2.printBalance());
+
+        Student user2 = new Student("dog", grades1);
+        System.out.println(user2.calculateAverage());
+
     }
 }

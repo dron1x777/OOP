@@ -6,11 +6,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
         String[] students = {"Aimerei", "Aibek", "Ruslan", "Akbermet"};
-        Group group = new Group("Galactic Strangers", students);
-        group.printStudents();
-        System.out.println(group.addStudent("Shamidin"));
-        group.printStudents();
-        System.out.println(group.countStudents());
+        Team group = new Team("Galactic Strangers", students);
+        group.printPlayers();
+        System.out.println(group.addPlayer("Shamidin"));
+        group.printPlayers();
+        System.out.println(group.addPlayer("Ruslan"));
+        group.printPlayers();
 
 
     }

@@ -5,16 +5,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
-        String[] courses = new String[10];
-        Student student = new Student();
-        student.setName(sc.nextLine());
-        student.setSurname(sc.nextLine());
-        student.setAge(sc.nextInt());
-        System.out.println(student.getInfo());
-        for (int i = 0; i < courses.length; i++) {
-            courses[i] = sc.nextLine();
-        }
-        student.setArray(courses);
-        student.getArray();
+        Car car = new Car();
+        car.setBrand("BMW");
+        car.setYear(2018);
+        car.setModel("F90");
+        car.setSpeed(230);
+        System.out.println(car.getYear());
+        System.out.println(car.getBrand());
+        System.out.println(car.getYear());
+        System.out.println(car.getModel());
+        System.out.println(car.increaseSpeed(50));
+        System.out.println(car.decreaseSpeed(290));
+
+
     }
 }

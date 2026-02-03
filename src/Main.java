@@ -1,47 +1,81 @@
-import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
-        University[] university = new University[2];
-        for (int i = 0; i < university.length; i++) {
-            university[i] = new University();
-            university[i].setName("University" + i);
-            university[i].setYear(2019);
-            System.out.println(university[i].getName());
-            System.out.println(university[i].getYear());
+        Customer customer = new Customer();
+        createCustomer(customer);
+    }
 
-            university[i].setYear(university[i].getYear() + 1);
-        }
+    public static void createCustomer(Customer customer){
+        Scanner sc = new Scanner(System.in);
+        customer.setFirstName(sc.nextLine());
+        customer.setDateOfBirth(sc.nextInt());
+        sc.nextLine();
+        customer.setEmail(sc.nextLine());
+        customer.setPhoneNumber(sc.nextLine());
+        customer.setId(sc.nextLong());
+        sc.nextLine();
+    }
 
-        School[] schools = new School[2];
-        for (int i = 0; i < schools.length; i++) {
-            schools[i] = new School();
-            schools[i].setName("School" + i);
-            schools[i].setNumber(117);
-            System.out.println(schools[i].getName());
-            System.out.println(schools[i].getNumber());
-            schools[i].setNumber(schools[i].getNumber() + 1);
+    public static void getByldCustomer(Customer customer){
+        System.out.println("your name is: " + customer.getFirstName() + ", " + customer.getDateOfBirth() + ", " + customer.getPhoneNumber() + ", " + customer.getId() + ", " + customer.getEmail());
+    }
+
+    public static void updateCustomer(Customer customer){
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            System.out.println("""
+                    what you wanna update?
+                    1. name
+                    2. email
+                    3. phoneNumber
+                    4. ID
+                    5. dateOfBirth
+                    6. exist""");
+
+            int choice = sc.nextInt();
+            switch(choice){
+                case 1:
+                    sc.nextLine(); // очищаем буфер
+                    customer.setFirstName(sc.nextLine());
+                    System.out.println("your name is: " + customer.getFirstName());
+                    break;
+                case 2:
+                    sc.nextLine();
+                    customer.setEmail(sc.nextLine());
+                    System.out.println("your email is: " + customer.getEmail());
+                    break;
+                case 3:
+                    sc.nextLine();
+                    customer.setPhoneNumber(sc.nextLine());
+                    System.out.println("your phone number is: " + customer.getPhoneNumber());
+                    break;
+                case 4:
+                    customer.setId(sc.nextLong());
+                    sc.nextLine();
+                    System.out.println("your ID is: " + customer.getId());
+                    break;
+                case 5:
+                    customer.setDateOfBirth(sc.nextInt());
+                    sc.nextLine();
+                    System.out.println("your date of birth is: " + customer.getDateOfBirth());
+                    break;
+                case 6:
+                    System.out.println("good bye!");
+                    return;
+            }
         }
-        Car[] cars = new Car[2];
-        for (int i = 0; i < cars.length; i++) {
-            cars[i] = new Car();
-            cars[i].setModel("Model" + i);
-            cars[i].setYear(2018);
-            System.out.println(cars[i].getModel());
-            System.out.println(cars[i].getYear());
-            cars[i].setYear(cars[i].getYear() + 1);
-        }
-        Person[] persons = new Person[2];
-        for (int i = 0; i < persons.length; i++) {
-            persons[i] = new Person();
-            persons[i].setName("Person" + i);
-            persons[i].setAge(15+1);
-            System.out.println(persons[i].getName());
-            System.out.println(persons[i].getAge());
-            persons[i].setAge(persons[i].getAge() + 1);
-        }
+    }
+
+    public static void deleteCustomer(Customer customer){
+        customer.setFirstName(null);
+        customer.setDateOfBirth(0);
+        customer.setEmail(null);
+        customer.setPhoneNumber(null);
+        customer.setId(0);
+        System.out.println("Customer deleted.");
     }
 }
